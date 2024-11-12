@@ -17,7 +17,7 @@ const isPath = (props, propName, componentName) => {
   if (pathValue === undefined) return;
   if (!pathValue.startsWith("/"))
     return new Error(
-      `Prop ${propName} passed to ${componentName} must start with a slash "/"`
+      `Prop ${propName} passed to ${componentName} must start with a slash "/"`,
     );
 };
 

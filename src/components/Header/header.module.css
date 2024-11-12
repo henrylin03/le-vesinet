@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.header>* {
+.header > * {
   grid-row: 1;
 }
 
@@ -39,7 +39,7 @@
   background-color: transparent;
 }
 
-.nav>a:hover,
+.nav > a:hover,
 .activePageLink {
   text-decoration: underline 2px;
   text-underline-offset: 8px;
