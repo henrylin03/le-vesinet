@@ -1,9 +1,13 @@
 import Header from "../../components/Header";
+import HeroSection from "./HeroSection";
 
 const HomePage = () => (
   <>
     <Header />
-    <h1>This is the home page</h1>
+
+    <main>
+      <HeroSection />
+    </main>
   </>
 );
 

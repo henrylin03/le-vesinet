@@ -2,6 +2,7 @@
 
 * {
   font-family: "Nunito Sans", sans-serif;
+  text-wrap: balance;
 }
 
 .visually-hidden {

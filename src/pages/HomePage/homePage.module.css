@@ -1,0 +1,15 @@
+.inner {
+  padding-left: 72px;
+}
+
+@media (max-width: 999px) {
+  .inner {
+    padding-left: 48px;
+  }
+}
+
+@media (max-width: 699px) {
+  .inner {
+    padding-left: 24px;
+  }
+}
