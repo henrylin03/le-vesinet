@@ -22,12 +22,20 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 16vmin;
 }
 
 .heroTitle {
   text-transform: uppercase;
   font-size: 2rem;
+}
+
+.heroTitle {
+  text-wrap: balance;
+}
+
+.subText {
+  composes: paragraphText from "../homePage.module.css";
+  text-wrap: balance;
 }
 
 .button {
@@ -55,10 +63,6 @@
     font-size: 1.8rem;
   }
 
-  .subText {
-    font-size: 0.9rem;
-  }
-
   .button {
     font-size: 0.88rem;
     padding: 12px 24px;
@@ -71,17 +75,12 @@
   }
 
   .inner {
-    width: 80dvw;
-    padding-bottom: 72px;
+    width: 90dvw;
   }
 }
 
 /* for narrow mobile screens, landscape */
 @media (max-height: 376px) {
-  .inner {
-    padding-bottom: 24px;
-  }
-
   .backgroundImage {
     object-position: 50% 80%;
   }
@@ -90,10 +89,6 @@
 @media (max-width: 444px) {
   .backgroundImage {
     object-position: 72% 50%;
-  }
-
-  .inner {
-    padding-bottom: 108px;
   }
 
   .heroTitle {

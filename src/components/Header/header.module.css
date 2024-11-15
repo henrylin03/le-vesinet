@@ -3,6 +3,10 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
+  background-color: white;
+  position: sticky;
+  width: 100%;
+  z-index: 2;
 }
 
 .header > * {
