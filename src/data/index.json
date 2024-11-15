@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "H01 - Hand Moisturiser Niacinamide 5% + Lactic Acid 1%",
+      "sizeGrams": 30,
+      "priceAUD": 25,
+      "description": "Calm, soften, and hydrate dry hands using this highly moisturising, airy, and non-greasy formula. Incorporating a mix of active ingredients at strength, ensuring superior and deep hydration, leaving your hands feeling soft and flexible.",
+      "details": "For all seasons - Delivers refreshing moisture to dryness.",
+      "instructions": "Apply small amount of hand cream on palm and rub hands together thoroughly until dry. Reapply as required.",
+      "ingredients": [
+        "Aqua",
+        "Cetearyl Alcohol",
+        "Ceteareth 20",
+        "Shea Butter",
+        "Cyclomethicone",
+        "Dimethicone",
+        "Carbomer",
+        "Ethylhexylglycerin",
+        "Niacinamide",
+        "Lactic Acid",
+        "Tocopherol Acetate",
+        "Phenoxyethanol",
+        "Sodium Hydroxide",
+        "Glycerin",
+        "Aloe Barbensis Leaf Juice Powder",
+        "Disodium EDTA"
+      ],
+      "isInStock": true
+    },
+    {
+      "id": "2",
+      "name": "H01 - Hand Moisturiser Trio Bundle",
+      "sizeGrams": 30,
+      "priceAUD": 60,
+      "description": "Trio bundle of H01 Hand Moisturiser to deliver superior and deeply penetrating hydration, leaving your hands feeling soft and flexible.",
+      "details": "Suitable for general skin types. For all seasons - Delivers refreshing moisture to dryness.",
+      "instructions": "Apply small amount of hand cream on palm and rub hands together thoroughly until dry. Reapply as required.",
+      "ingredients": [
+        "Aqua",
+        "Cetearyl Alcohol",
+        "Ceteareth 20",
+        "Shea Butter",
+        "Cyclomethicone",
+        "Dimethicone",
+        "Carbomer",
+        "Ethylhexylglycerin",
+        "Niacinamide",
+        "Lactic Acid",
+        "Tocopherol Acetate",
+        "Phenoxyethanol",
+        "Sodium Hydroxide",
+        "Glycerin",
+        "Aloe Barbensis Leaf Juice Powder",
+        "Disodium EDTA"
+      ],
+      "isInStock": true
+    }
+  ]
+}
