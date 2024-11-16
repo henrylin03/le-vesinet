@@ -1,8 +1,13 @@
 .header {
-  padding: 24px 36px;
+  padding: 20px 36px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  width: 100%;
 }
 
 .header > * {
@@ -18,7 +23,7 @@
 .nav {
   justify-self: center;
   text-align: center;
-  width: 75%;
+  width: 60%;
   text-transform: uppercase;
 
   /* flexbox */
@@ -58,7 +63,7 @@
 /* media queries */
 @media (max-width: 999px) {
   .header {
-    padding: 24px 20px;
+    padding: 16px 20px;
   }
 
   .desktopNavContainer {
@@ -80,7 +85,7 @@
   .nav {
     align-items: start;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
 
   .drawer {
@@ -90,7 +95,7 @@
 
 @media (max-width: 549px) {
   .header {
-    padding: 24px 16px;
+    padding: 16px;
   }
 
   .brandingImage {

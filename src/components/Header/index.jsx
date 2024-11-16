@@ -10,7 +10,6 @@ const Nav = () => (
   <nav className={styles.nav}>
     <PageLink text="Home" />
     <PageLink text="Products" path="/products" />
-    <PageLink text="About Us" path="/about-us" />
   </nav>
 );
 
