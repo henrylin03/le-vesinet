@@ -29,6 +29,7 @@
 }
 
 .link {
+  composes: paragraphText;
   text-transform: uppercase;
   margin-top: 20px;
   color: #7c7c7c !important;

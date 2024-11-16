@@ -7,6 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 9;
+  width: 100%;
 }
 
 .header > * {
@@ -22,7 +23,7 @@
 .nav {
   justify-self: center;
   text-align: center;
-  width: 75%;
+  width: 60%;
   text-transform: uppercase;
 
   /* flexbox */

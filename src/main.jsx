@@ -6,7 +6,6 @@ import { MantineProvider } from "@mantine/core";
 /* pages */
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
-import AboutUsPage from "./pages/AboutUsPage";
 import CartPage from "./pages/CartPage";
 
 /* css */
@@ -18,7 +17,6 @@ import "@mantine/carousel/styles.css";
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "products", element: <ProductsPage /> },
-  { path: "about-us", element: <AboutUsPage /> },
   { path: "cart", element: <CartPage /> },
 ]);
 
