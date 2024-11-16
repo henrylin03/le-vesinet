@@ -13,6 +13,7 @@ import CartPage from "./pages/CartPage";
 import "./styles/normalise.css";
 import "./styles/global.css";
 import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },

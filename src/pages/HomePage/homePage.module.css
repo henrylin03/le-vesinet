@@ -24,6 +24,10 @@
   text-wrap: auto;
 }
 
+.paragraphText {
+  font-size: 1rem;
+}
+
 .link {
   text-transform: uppercase;
   margin-top: 20px;
@@ -39,6 +43,37 @@
 
 .image {
   max-width: 100%;
+}
+
+.ourProductsSection {
+  composes: inner;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.viewAllLink {
+  composes: paragraphText;
+  font-weight: 700;
+  background-image: linear-gradient(black 0 0);
+  background-position: bottom left;
+  background-size: 0 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.4s,
+    background-position 0s 0.4s;
+  margin-top: 2px;
+  padding-bottom: 2px;
+}
+
+.viewAllLink:hover {
+  background-position: bottom right;
+  background-size: 100% 2px;
 }
 
 /* MEDIA QUERIES */
@@ -78,10 +113,6 @@
 }
 
 @media (max-width: 444px) {
-  /* .inner {
-    padding: 108px 24px;
-  } */
-
   .heading {
     font-size: 1.2rem;
   }

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import HeroSection from "./HeroSection";
 import belowTheFoldImage from "../../assets/images/moisturisersNextToClayBowl.webp";
+import ProductsCarousel from "./ProductsCarousel";
 import styles from "./homePage.module.css";
 
 const HomePage = () => (
@@ -31,6 +32,21 @@ const HomePage = () => (
           alt="Le Vesinet hand moisturisers next to a clay bowl"
           className={styles.image}
         />
+      </section>
+
+      <section className={styles.ourProductsSection}>
+        <div className={styles.top}>
+          <h2 className={styles.heading}>Our Products</h2>
+          <Link
+            to="/products"
+            aria-label="See all products"
+            className={styles.viewAllLink}
+          >
+            View all
+          </Link>
+        </div>
+
+        <ProductsCarousel />
       </section>
     </main>
   </>
