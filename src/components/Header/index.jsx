@@ -3,14 +3,13 @@ import { Drawer, Burger } from "@mantine/core";
 import { Link, NavLink } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 import PageLink from "./PageLink";
-import brandingImage from "../../assets/images/branding.svg";
+import brandingImage from "../../assets/images/branding/branding.svg";
 import styles from "./header.module.css";
 
 const Nav = () => (
   <nav className={styles.nav}>
     <PageLink text="Home" />
     <PageLink text="Products" path="/products" />
-    <PageLink text="About Us" path="/about-us" />
   </nav>
 );
 

@@ -1,0 +1,108 @@
+.footer {
+  background-color: black;
+  position: relative;
+}
+
+.inner {
+  composes: inner from global;
+  color: white;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+.branding {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.paragraphText {
+  composes: paragraphText from global;
+}
+
+.heading {
+  composes: paragraphText from global;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.pageLinksSection {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+.pageLinksList {
+  composes: paragraphText from global;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subscribe {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.form {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.emailInput {
+  composes: paragraphText from global;
+  width: 100%;
+  background: transparent;
+  padding: 8px 0;
+  color: white;
+}
+
+.emailInput::placeholder {
+  color: white;
+}
+
+.button {
+  background: transparent;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 36px;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 24px;
+}
+
+@media (max-width: 1009px) {
+  .inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 899px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .subscribe {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 24px 0;
+    gap: 24px;
+  }
+
+  .copyright {
+    bottom: 16px;
+  }
+}

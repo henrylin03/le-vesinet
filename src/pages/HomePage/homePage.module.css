@@ -1,0 +1,84 @@
+.grid {
+  composes: inner from global;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  justify-items: start;
+  gap: 20px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading {
+  text-transform: uppercase;
+}
+
+.paragraph {
+  text-wrap: auto;
+}
+
+.link {
+  composes: paragraphText from global;
+  text-transform: uppercase;
+  margin-top: 20px;
+  color: #7c7c7c !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.1s ease-out;
+}
+
+.link:hover {
+  color: black !important;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.ourProductsSection {
+  composes: inner from global;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.viewAllLink {
+  composes: paragraphText from global;
+  font-weight: 700;
+  background-image: linear-gradient(black 0 0);
+  background-position: bottom left;
+  background-size: 0 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.4s,
+    background-position 0s 0.4s;
+  margin-top: 2px;
+  padding-bottom: 2px;
+}
+
+.viewAllLink:hover {
+  background-position: bottom right;
+  background-size: 100% 2px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 599px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 444px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+}
