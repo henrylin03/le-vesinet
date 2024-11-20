@@ -1,9 +1,5 @@
-.inner {
-  padding: 100px 72px;
-}
-
 .grid {
-  composes: inner;
+  composes: inner from global;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   justify-items: start;
@@ -24,12 +20,8 @@
   text-wrap: auto;
 }
 
-.paragraphText {
-  font-size: 1rem;
-}
-
 .link {
-  composes: paragraphText;
+  composes: paragraphText from global;
   text-transform: uppercase;
   margin-top: 20px;
   color: #7c7c7c !important;
@@ -47,7 +39,7 @@
 }
 
 .ourProductsSection {
-  composes: inner;
+  composes: inner from global;
 }
 
 .top {
@@ -59,7 +51,7 @@
 }
 
 .viewAllLink {
-  composes: paragraphText;
+  composes: paragraphText from global;
   font-weight: 700;
   background-image: linear-gradient(black 0 0);
   background-position: bottom left;
@@ -78,38 +70,10 @@
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 999px) {
-  .inner {
-    padding: 100px 48px;
-  }
-}
-
-@media (max-width: 899px) {
-  .paragraphText {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 779px) {
-  .inner {
-    padding: 72px 48px;
-  }
-}
 
 @media (max-width: 599px) {
-  .inner {
-    padding: 12vmin 4vmin;
-  }
-
   .grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* for narrow mobile screens, landscape */
-@media (max-height: 376px) {
-  .inner {
-    padding: 8vmin 4vmin;
   }
 }
 

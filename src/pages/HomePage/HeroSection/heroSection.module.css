@@ -18,7 +18,7 @@
 }
 
 .inner {
-  composes: inner from "../homePage.module.css";
+  composes: inner from global;
   display: flex;
   flex-direction: column;
   gap: 8px;

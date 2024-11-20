@@ -11,3 +11,43 @@ p {
 .visually-hidden {
   display: none;
 }
+
+.inner {
+  padding: 100px 72px;
+}
+
+.paragraphText {
+  font-size: 1rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 999px) {
+  .inner {
+    padding: 100px 48px;
+  }
+}
+
+@media (max-width: 899px) {
+  .paragraphText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 779px) {
+  .inner {
+    padding: 72px 48px;
+  }
+}
+
+@media (max-width: 599px) {
+  .inner {
+    padding: 12vmin 4vmin;
+  }
+}
+
+/* for narrow mobile screens, landscape */
+@media (max-height: 376px) {
+  .inner {
+    padding: 8vmin 4vmin;
+  }
+}

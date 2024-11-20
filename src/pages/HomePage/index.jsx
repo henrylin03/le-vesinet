@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import HeroSection from "./HeroSection";
 import belowTheFoldImage from "../../assets/images/moisturisersNextToClayBowl.webp";
 import ProductsCarousel from "./ProductsCarousel";
@@ -49,6 +50,8 @@ const HomePage = () => (
         <ProductsCarousel />
       </section>
     </main>
+
+    <Footer />
   </>
 );
 
