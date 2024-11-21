@@ -34,7 +34,7 @@
 }
 
 .subText {
-  composes: paragraphText from "../homePage.module.css";
+  composes: paragraphText from global;
   text-wrap: balance;
 }
 

@@ -13,11 +13,15 @@
 }
 
 .heading {
-  text-transform: uppercase;
+  composes: heading from global;
 }
 
 .paragraph {
   text-wrap: auto;
+}
+
+.paragraphText {
+  composes: paragraphText from global;
 }
 
 .link {
@@ -74,11 +78,5 @@
 @media (max-width: 599px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 444px) {
-  .heading {
-    font-size: 1.2rem;
   }
 }

@@ -6,6 +6,7 @@ import {
   IconBrandYoutube,
   IconArrowRight,
 } from "@tabler/icons-react";
+import { toTitleCase } from "../../helpers";
 import logoImage from "../../assets/images/branding/branding-white-bg.svg";
 import styles from "./footer.module.css";
 
@@ -31,8 +32,12 @@ const Footer = () => {
   ];
 
   const socials = SOCIALS_DATA.map((s) => (
-    <li>
-      <a href={s.url} target="_blank" aria-label={`Go to our ${s.name} page`}>
+    <li key={s.name}>
+      <a
+        href={s.url}
+        target="_blank"
+        aria-label={`Go to our ${toTitleCase(s.name)} page`}
+      >
         {s.icon}
       </a>
     </li>

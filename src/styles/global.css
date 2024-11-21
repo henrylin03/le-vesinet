@@ -16,6 +16,11 @@ p {
   padding: 100px 72px;
 }
 
+.heading {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
 .paragraphText {
   font-size: 1rem;
 }
@@ -42,6 +47,12 @@ p {
 @media (max-width: 599px) {
   .inner {
     padding: 12vmin 4vmin;
+  }
+}
+
+@media (max-width: 444px) {
+  .heading {
+    font-size: 1.2rem;
   }
 }
 

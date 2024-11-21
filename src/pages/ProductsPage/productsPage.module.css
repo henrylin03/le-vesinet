@@ -1,0 +1,22 @@
+.top {
+  composes: inner from global;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 36px;
+}
+
+.heading {
+  composes: heading from global;
+  margin-bottom: 8px;
+}
+
+.paragraphText {
+  composes: paragraphText from global;
+}
+
+.products {
+  composes: inner from global;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+}
