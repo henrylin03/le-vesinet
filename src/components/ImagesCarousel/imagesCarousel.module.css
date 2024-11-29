@@ -1,0 +1,8 @@
+.carouselContainer {
+  max-width: 100dvw;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}

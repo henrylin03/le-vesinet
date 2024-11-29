@@ -39,12 +39,10 @@
 }
 
 .button {
-  color: white;
-  background-color: black;
+  composes: primaryButton from global;
   text-transform: uppercase;
   font-size: 0.9rem;
   padding: 17px 32px 16px 32px;
-  border-radius: 5px;
   margin-top: 12px;
   transition: transform 0.3s ease-out;
 }

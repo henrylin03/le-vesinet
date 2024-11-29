@@ -1,0 +1,174 @@
+.paragraphText {
+  font-size: 0.88rem;
+  line-height: 1.5rem;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 12px 144px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.text {
+  padding: 36px 48px;
+  text-wrap: pretty;
+  display: flex;
+  flex-direction: column;
+  gap: 3vmin;
+}
+
+.basicInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.descriptionAndBuyContainer {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.buyActions {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.quantityInputs {
+  justify-self: start;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+
+.adjustQuantityButton {
+  margin-top: 4px;
+  background: none;
+  height: auto;
+}
+
+.numberInput {
+  flex: 1;
+  max-width: 3rem;
+  text-align: center;
+}
+
+.addToCartButton {
+  composes: primaryButton from global;
+  composes: paragraphText;
+  font-weight: 600;
+  padding: 16px;
+  width: 280px;
+  border: 1px solid black;
+  transition:
+    background-color 0.1s ease-in-out,
+    color 0.1s ease-in;
+}
+
+.addToCartButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.shippingAndReturnPolicy {
+  composes: paragraphText;
+  margin-left: 36px;
+  margin-top: 24px;
+}
+
+.bottom {
+  padding: 72px 144px 144px 144px;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.sectionHeading {
+  composes: heading from global;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1369px) {
+  .inner {
+    max-width: 100%;
+    padding: 4px 0;
+  }
+
+  .grid {
+    gap: 24px;
+  }
+
+  .bottom {
+    width: 100%;
+  }
+}
+
+@media (max-width: 899px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .buyActions {
+    justify-content: space-between;
+  }
+
+  .quantityInputs {
+    width: fit-content;
+  }
+
+  .addToCartButton {
+    width: 100%;
+  }
+
+  .bottom {
+    padding: 60px 48px 124px 48px;
+  }
+
+  .sectionHeading {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 499px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    padding: 0 24px;
+    gap: 12px;
+  }
+
+  .bottom {
+    width: 100%;
+    padding: 48px 24px;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .sectionHeading {
+    font-size: 1rem !important;
+  }
+}

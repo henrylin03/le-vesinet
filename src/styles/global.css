@@ -8,6 +8,12 @@ p {
   text-wrap: pretty;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .visually-hidden {
   display: none;
 }
@@ -23,6 +29,12 @@ p {
 
 .paragraphText {
   font-size: 1rem;
+}
+
+.primaryButton {
+  color: white;
+  background-color: black;
+  border-radius: 5px;
 }
 
 /* MEDIA QUERIES */
