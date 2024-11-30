@@ -1,0 +1,28 @@
+.flex {
+  composes: inner from global;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vmin;
+}
+
+.heading {
+  letter-spacing: 0.02rem;
+  font-size: 1.8rem;
+}
+
+.paragraphText {
+  composes: paragraphText from global;
+}
+
+.link {
+  composes:
+    link from global,
+    paragraphText from global;
+}
+
+@media (max-width: 499px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}
