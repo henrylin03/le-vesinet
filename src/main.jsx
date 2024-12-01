@@ -1,9 +1,11 @@
+/* external imports */
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 
-/* pages */
+/* components */
+import App from "./App";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
@@ -16,10 +18,16 @@ import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 
 const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
-  { path: "products", element: <ProductsPage /> },
-  { path: "products/:productId", element: <ProductPage /> },
-  { path: "cart", element: <CartPage /> },
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "products", element: <ProductsPage /> },
+      { path: "products/:productId", element: <ProductPage /> },
+      { path: "cart", element: <CartPage /> },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
