@@ -4,7 +4,7 @@ import productsData from "../../data/index.json";
 
 const ProductsCarousel = () => {
   const slides = productsData.products.map((product) => (
-    <Carousel.Slide>
+    <Carousel.Slide key={product.id}>
       <ProductPreview productObject={product} key={product.id} />
     </Carousel.Slide>
   ));

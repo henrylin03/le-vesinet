@@ -1,0 +1,71 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.productRow {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 16px;
+}
+
+.productImage {
+  composes: productImage from "./cartItems.module.css";
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productName {
+  composes: productName from "./cartItems.module.css";
+}
+
+.paragraphText {
+  composes: paragraphText from global;
+}
+
+.subtotal {
+  font-size: 0.8rem;
+}
+
+.link {
+  composes: link from global;
+  font-size: 0.8rem;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.quantityAdjust {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.total {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  padding: 12px 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taxAndShipping {
+  font-size: 0.8rem;
+  color: var(--grey-colour);
+  text-align: center;
+}

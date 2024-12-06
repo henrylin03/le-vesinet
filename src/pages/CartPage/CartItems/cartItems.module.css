@@ -1,0 +1,85 @@
+.link {
+  composes: link from global;
+}
+
+.table {
+  max-width: 960px;
+}
+
+.tableBody > tr:nth-last-child(2),
+.tableBody > tr:nth-last-child(3) {
+  border: none;
+}
+
+.productCell {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 24px;
+}
+
+.productImage {
+  max-height: 100px;
+}
+
+.productName {
+  composes: paragraphText from global;
+  font-weight: bold;
+}
+
+.quantityInputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.updateCartCell {
+  text-align: center;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.total > tr {
+  border-top: black 1px solid;
+  border-bottom-color: black !important;
+}
+
+.buttonGroup {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.button {
+  padding: 16px 24px;
+  transition: transform 0.3s ease-out;
+  text-wrap: nowrap;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.checkoutButton {
+  composes:
+    primaryButton from global,
+    button;
+  border: 1px solid black;
+}
+
+.continueShoppingButton {
+  composes:
+    secondaryButton from global,
+    button;
+}
+
+@media (max-width: 499px) {
+  .button {
+    padding: 12px 16px;
+    font-size: 0.88rem !important;
+  }
+}

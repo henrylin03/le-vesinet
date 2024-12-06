@@ -1,32 +1,23 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { useMediaQuery } from "@mantine/hooks";
-import { Plus, Minus } from "lucide-react";
+import QuantityInput from "../../components/QuantityInput";
 import ImagesGrid from "../../components/ImagesGrid";
 import ImagesCarousel from "../../components/ImagesCarousel";
-import getProduct from "./getProduct";
+import getProduct from "../../helpers/getProduct";
 import styles from "./productPage.module.css";
 
 const ProductPage = () => {
-  const [quantity, setQuantity] = useState(1);
-  const isNarrowScreen = useMediaQuery("(max-width: 899px)");
+  const [productQuantity, setProductQuantity] = useState(1);
   const { productId } = useParams();
+  const [, addProductToCart] = useOutletContext();
+  const isNarrowScreen = useMediaQuery("(max-width: 899px)");
+
   const productObject = getProduct(productId);
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Backspace" || event.key === "Delete") return;
-    if (!/[0-9]/.test(event.key)) event.preventDefault();
-  };
-
-  const handleChange = (event) => {
-    const inputValue = event.target.value;
-    if (inputValue === "") return setQuantity("");
-    setQuantity(inputValue);
-  };
-
-  const handleBlur = (event) => {
-    if (!event.target.value || parseInt(event.target.value) === 0)
-      setQuantity(1);
+  const handleClickOnAddToCart = () => {
+    addProductToCart(productId, productQuantity);
+    setProductQuantity(1);
   };
 
   return (
@@ -54,32 +45,15 @@ const ProductPage = () => {
                 {productObject.description}
               </p>
               <div className={styles.buyActions}>
-                <div className={styles.quantityInputs}>
-                  <button
-                    type="button"
-                    className={styles.adjustQuantityButton}
-                    onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                  >
-                    <Minus size={16} />
-                  </button>
-                  <input
-                    type="number"
-                    onFocus={(event) => event.currentTarget.select()}
-                    onKeyDown={handleKeyDown}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={quantity}
-                    className={styles.numberInput}
-                  />
-                  <button
-                    type="button"
-                    className={styles.adjustQuantityButton}
-                    onClick={() => setQuantity(Number(quantity) + 1)}
-                  >
-                    <Plus size={16} />
-                  </button>
-                </div>
-                <button type="button" className={styles.addToCartButton}>
+                <QuantityInput
+                  quantityState={productQuantity}
+                  quantityStateSetter={setProductQuantity}
+                />
+                <button
+                  type="button"
+                  className={styles.addToCartButton}
+                  onClick={handleClickOnAddToCart}
+                >
                   Add to Cart
                 </button>
               </div>

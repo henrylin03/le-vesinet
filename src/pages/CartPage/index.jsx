@@ -1,25 +1,27 @@
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { useOutletContext } from "react-router-dom";
+import EmptyCart from "./EmptyCart";
+import CartItems from "./CartItems";
 import styles from "./cartPage.module.css";
 
-const EmptyCart = () => (
-  <>
-    <p className={styles.paragraphText}>Your cart is currently empty.</p>
-    <Link to="/products" className={styles.link}>
-      Continue shopping
-    </Link>
-  </>
-);
+const CartPage = () => {
+  const [cartProducts, , removeProductFromCart, setCartProducts] =
+    useOutletContext();
+  const isEmpty = Object.keys(cartProducts).length === 0;
 
-const CartPage = ({ items }) => (
-  <div className={styles.flex}>
-    <h1 className={styles.heading}>Shopping cart</h1>
-    {items || <EmptyCart />}
-  </div>
-);
-
-CartPage.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  return (
+    <section className={styles.flex}>
+      <h1 className={styles.heading}>Shopping cart</h1>
+      {isEmpty > 0 ? (
+        <EmptyCart />
+      ) : (
+        <CartItems
+          cartProducts={cartProducts}
+          setCartProducts={setCartProducts}
+          removeProductFromCart={removeProductFromCart}
+        />
+      )}
+    </section>
+  );
 };
 
 export default CartPage;

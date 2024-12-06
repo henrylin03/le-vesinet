@@ -6,8 +6,8 @@ import styles from "./heroSection.module.css";
 const HeroSection = () => (
   <section className={styles.hero}>
     <picture className={styles.backgroundImage}>
-      <source media="(min-width: 780px)" srcset={heroImage} />
-      <source media="(max-width: 779px)" srcset={heroImage780w} />
+      <source media="(min-width: 780px)" srcSet={heroImage} />
+      <source media="(max-width: 779px)" srcSet={heroImage780w} />
       <img className={styles.backgroundImage} src={heroImage} />
     </picture>
 
