@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Table } from "@mantine/core";
+import { Table, Skeleton } from "@mantine/core";
 import QuantityInput from "../../../components/QuantityInput";
 import getProduct from "../../../helpers/getProduct";
 import styles from "./cartItems.module.css";
@@ -13,6 +14,8 @@ const CartTable = ({
   removeProduct,
   getCartTotal,
 }) => {
+  const [imageIsLoading, setImageIsLoading] = useState(true);
+
   const generateTableRows = () => {
     let tableRows = [];
     for (const productId in cartProducts) {
@@ -31,10 +34,13 @@ const CartTable = ({
         <Table.Tr key={productId}>
           <Table.Td>
             <Link to={`/products/${productId}`} className={styles.productCell}>
-              <img
-                src={productObject.images[0]}
-                className={styles.productImage}
-              />
+              <Skeleton visible={imageIsLoading}>
+                <img
+                  src={productObject.images[0]}
+                  className={styles.productImage}
+                  onLoad={() => setImageIsLoading(false)}
+                />
+              </Skeleton>
               <p className={styles.productName}>{productObject.name}</p>
             </Link>
           </Table.Td>

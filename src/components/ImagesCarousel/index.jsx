@@ -1,17 +1,25 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { Skeleton } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import PropTypes from "prop-types";
 import styles from "./imagesCarousel.module.css";
 
 const ImagesCarousel = ({ imagePaths }) => {
+  const [imageIsLoading, setImageIsLoading] = useState(true);
   const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   const slides = imagePaths.map((imagePath) => (
     <Carousel.Slide key={imagePath}>
-      <figure>
-        <img src={imagePath} className={styles.image} />
-      </figure>
+      <Skeleton visible={imageIsLoading} radius={16}>
+        <figure>
+          <img
+            src={imagePath}
+            className={styles.image}
+            onLoad={() => setImageIsLoading(false)}
+          />
+        </figure>
+      </Skeleton>
     </Carousel.Slide>
   ));
 

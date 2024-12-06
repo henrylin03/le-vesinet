@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { ActionIcon } from "@mantine/core";
+import { ActionIcon, Skeleton } from "@mantine/core";
 import { Trash2 } from "lucide-react";
 import QuantityInput from "../../../components/QuantityInput";
 import getProduct from "../../../helpers/getProduct";
@@ -14,6 +15,8 @@ const CartList = ({
   removeProduct,
   getCartTotal,
 }) => {
+  const [imageIsLoading, setImageIsLoading] = useState(true);
+
   const generateProductRows = () => {
     let rows = [];
     for (const productId in cartProducts) {
@@ -31,10 +34,13 @@ const CartList = ({
       const productRow = (
         <div className={styles.productRow} key={productObject.id}>
           <Link to={`/products/${productId}`}>
-            <img
-              src={productObject.images[0]}
-              className={styles.productImage}
-            />
+            <Skeleton visible={imageIsLoading}>
+              <img
+                src={productObject.images[0]}
+                className={styles.productImage}
+                onLoad={() => setImageIsLoading(false)}
+              />
+            </Skeleton>
           </Link>
 
           <div className={styles.right}>
