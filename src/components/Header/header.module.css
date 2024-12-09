@@ -6,8 +6,7 @@
   background-color: white;
   position: sticky;
   top: 0;
-  z-index: 9;
-  width: 100%;
+  z-index: 199;
 }
 
 .header > * {
@@ -42,6 +41,7 @@
   display: grid;
   justify-items: end;
   background-color: transparent;
+  position: relative;
 }
 
 .nav > a:hover,
@@ -58,6 +58,23 @@
 .drawer {
   display: none;
   z-index: 999;
+}
+
+.counter {
+  background-color: var(--grey-colour);
+  color: white;
+  width: 16px;
+  height: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  /* positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(40%, -33%);
 }
 
 /* media queries */

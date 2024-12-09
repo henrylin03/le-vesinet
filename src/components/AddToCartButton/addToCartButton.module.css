@@ -1,0 +1,49 @@
+.button {
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 16px;
+  width: 280px;
+  border-radius: 5px;
+}
+
+.buttonWithIcon {
+  composes: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px var(--grey-colour) solid;
+  color: var(--grey-colour);
+  background-color: white;
+  padding-right: 24px;
+}
+
+.buttonDefault {
+  composes:
+    primaryButton from global,
+    button;
+}
+
+.addingButton {
+  composes: buttonWithIcon;
+  cursor: wait;
+}
+
+.addedButton {
+  composes: buttonWithIcon;
+  cursor: auto;
+}
+
+.loadingIcon {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

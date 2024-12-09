@@ -43,19 +43,27 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 1rem;
 }
 
+.primaryButton,
+.secondaryButton {
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease-out;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: scale(1.05);
+}
+
 .primaryButton {
   color: white;
   background-color: black;
-  border-radius: 5px;
-  font-size: inherit;
 }
 
 .secondaryButton {
   color: black;
   background-color: white;
-  border-radius: 5px;
   border: 1px solid black;
-  font-size: inherit;
 }
 
 .link {

@@ -18,10 +18,19 @@ const Header = ({ cartProductIdsCount }) => (
     <PageLinks />
 
     <NavLink to="/cart" className={styles.cartLink}>
-      <button type="button" className={styles.cartButton}>
+      <button
+        type="button"
+        className={styles.cartButton}
+        aria-label="Go to shopping cart"
+      >
         <ShoppingBag />
+        <span
+          className={styles.counter}
+          aria-label="Number of items in shopping cart"
+        >
+          <small>{cartProductIdsCount}</small>
+        </span>
       </button>
-      <span className="visually-hidden">Go to shopping bag</span>
     </NavLink>
   </header>
 );
