@@ -4,11 +4,13 @@ import { useMediaQuery } from "@mantine/hooks";
 import QuantityInput from "../../components/QuantityInput";
 import ImagesGrid from "../../components/ImagesGrid";
 import ImagesCarousel from "../../components/ImagesCarousel";
+import AddedToCartModal from "../../components/AddedToCartModal";
 import getProduct from "../../helpers/getProduct";
 import styles from "./productPage.module.css";
 
 const ProductPage = () => {
   const [productQuantity, setProductQuantity] = useState(1);
+  const [modalOpened, setModalOpened] = useState(false);
   const { productId } = useParams();
   const [, addProductToCart] = useOutletContext();
   const isNarrowScreen = useMediaQuery("(max-width: 899px)");
@@ -16,12 +18,23 @@ const ProductPage = () => {
   const productObject = getProduct(productId);
 
   const handleClickOnAddToCart = () => {
+    if (productQuantity < 1) return setProductQuantity(1);
+    setModalOpened(true);
     addProductToCart(productId, productQuantity);
     setProductQuantity(1);
   };
 
   return (
     <>
+      <AddedToCartModal
+        modalOpened={modalOpened}
+        setModalOpened={setModalOpened}
+        productName={productObject.name}
+        productPreviewImagePath={productObject.images[0]}
+        productPrice={productObject.priceAUD}
+        productSize={productObject.sizeGrams}
+      />
+
       <div className={styles.inner}>
         <section className={styles.grid}>
           {isNarrowScreen ? (

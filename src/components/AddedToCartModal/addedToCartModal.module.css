@@ -1,0 +1,59 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem !important;
+}
+
+.productPreview {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+}
+
+.productImage {
+  max-width: 100%;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productName {
+  font-weight: bold;
+}
+
+.productSize {
+  color: var(--grey-colour);
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.button {
+  padding: 12px;
+  width: 100%;
+}
+
+.primaryButton {
+  composes:
+    primaryButton from global,
+    button;
+}
+
+.secondaryButton {
+  composes:
+    secondaryButton from global,
+    button;
+}
