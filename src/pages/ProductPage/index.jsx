@@ -7,6 +7,7 @@ import ImagesCarousel from "../../components/ImagesCarousel";
 import AddedToCartModal from "../../components/AddedToCartModal";
 import getProduct from "../../helpers/getProduct";
 import styles from "./productPage.module.css";
+import AddToCartButton from "../../components/AddToCartButton";
 
 const ProductPage = () => {
   const [productQuantity, setProductQuantity] = useState(1);
@@ -16,13 +17,6 @@ const ProductPage = () => {
   const isNarrowScreen = useMediaQuery("(max-width: 899px)");
 
   const productObject = getProduct(productId);
-
-  const handleClickOnAddToCart = () => {
-    if (productQuantity < 1) return setProductQuantity(1);
-    setModalOpened(true);
-    addProductToCart(productId, productQuantity);
-    setProductQuantity(1);
-  };
 
   return (
     <>
@@ -62,13 +56,13 @@ const ProductPage = () => {
                   quantityState={productQuantity}
                   quantityStateSetter={setProductQuantity}
                 />
-                <button
-                  type="button"
-                  className={styles.addToCartButton}
-                  onClick={handleClickOnAddToCart}
-                >
-                  Add to Cart
-                </button>
+                <AddToCartButton
+                  productId={productId}
+                  productQuantity={productQuantity}
+                  setModalOpened={setModalOpened}
+                  addProductToCart={addProductToCart}
+                  setProductQuantity={setProductQuantity}
+                />
               </div>
             </div>
 
