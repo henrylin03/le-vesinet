@@ -6,7 +6,7 @@ import {
   IconBrandYoutube,
   IconArrowRight,
 } from "@tabler/icons-react";
-import { toTitleCase } from "../../helpers";
+import toTitleCase from "../../helpers/toTitleCase";
 import logoImage from "../../assets/images/branding/branding-white-bg.svg";
 import styles from "./footer.module.css";
 

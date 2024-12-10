@@ -4,4 +4,4 @@ const toTitleCase = (inputStr) =>
     .map((word) => word[0].toUpperCase() + word.substring(1).toLowerCase())
     .join(" ");
 
-export { toTitleCase };
+export default toTitleCase;
