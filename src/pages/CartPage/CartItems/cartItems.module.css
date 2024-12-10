@@ -14,7 +14,7 @@
 .productCell {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  gap: 24px;
+  gap: 8px;
 }
 
 .productImage {
@@ -75,6 +75,12 @@
   composes:
     secondaryButton from global,
     button;
+}
+
+.subtotalCell {
+  display: grid;
+  align-items: center;
+  justify-items: start;
 }
 
 @media (max-width: 499px) {

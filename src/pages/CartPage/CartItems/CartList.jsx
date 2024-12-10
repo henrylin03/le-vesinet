@@ -5,6 +5,7 @@ import { ActionIcon, Skeleton } from "@mantine/core";
 import { Trash2 } from "lucide-react";
 import QuantityInput from "../../../components/QuantityInput";
 import getProduct from "../../../helpers/getProduct";
+import toMoneyFormat from "../../../helpers/toMoneyFormat";
 import styles from "./cartList.module.css";
 
 const CartList = ({
@@ -31,6 +32,10 @@ const CartList = ({
         }));
       };
 
+      const productSubtotal = toMoneyFormat(
+        productQuantities[productId] * productObject.priceAUD,
+      );
+
       const productRow = (
         <div className={styles.productRow} key={productObject.id}>
           <Link to={`/products/${productId}`}>
@@ -48,7 +53,7 @@ const CartList = ({
               <p className={styles.productName}>{productObject.name}</p>
             </Link>
             <small className={styles.subtotal}>
-              Subtotal: ${productQuantities[productId] * productObject.priceAUD}
+              Subtotal: {productSubtotal}
             </small>
             <div className={styles.quantityAdjust}>
               <QuantityInput
@@ -87,7 +92,7 @@ const CartList = ({
       </a>
       <div className={styles.total}>
         <p>Total</p>
-        <p>$ {getCartTotal()}</p>
+        <p>{toMoneyFormat(getCartTotal())}</p>
       </div>
       <small className={styles.taxAndShipping}>
         Tax included and shipping calculated at check out

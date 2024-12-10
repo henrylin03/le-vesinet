@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Table, Skeleton } from "@mantine/core";
 import QuantityInput from "../../../components/QuantityInput";
 import getProduct from "../../../helpers/getProduct";
+import toMoneyFormat from "../../../helpers/toMoneyFormat";
 import styles from "./cartItems.module.css";
 
 const CartTable = ({
@@ -29,6 +30,10 @@ const CartTable = ({
           [productId]: newQuantity,
         }));
       };
+
+      const productSubtotal = toMoneyFormat(
+        productQuantities[productId] * productObject.priceAUD,
+      );
 
       const productRow = (
         <Table.Tr key={productId}>
@@ -59,7 +64,7 @@ const CartTable = ({
             </div>
           </Table.Td>
           <Table.Td>
-            ${productQuantities[productId] * productObject.priceAUD}
+            <div className={styles.subtotalCell}>{productSubtotal}</div>
           </Table.Td>
         </Table.Tr>
       );
@@ -96,8 +101,8 @@ const CartTable = ({
       </Table.Tbody>
       <Table.Tfoot className={styles.total}>
         <Table.Tr>
-          <Table.Td colSpan={3}>Total</Table.Td>
-          <Table.Td>${getCartTotal()}</Table.Td>
+          <Table.Td colSpan={2}>Total</Table.Td>
+          <Table.Td>{toMoneyFormat(getCartTotal())}</Table.Td>
         </Table.Tr>
       </Table.Tfoot>
 

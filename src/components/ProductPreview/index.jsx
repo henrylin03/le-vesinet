@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Skeleton } from "@mantine/core";
 import PropTypes from "prop-types";
+import toMoneyFormat from "../../helpers/toMoneyFormat";
 import styles from "./productPreview.module.css";
 
 const ProductPreview = ({ productObject }) => {
@@ -20,7 +21,9 @@ const ProductPreview = ({ productObject }) => {
 
         <div className={styles.textContainer}>
           <p className={styles.productName}>{productObject.name}</p>
-          <p className={styles.price}>${productObject.priceAUD} AUD</p>
+          <p className={styles.price}>
+            {toMoneyFormat(productObject.priceAUD)}
+          </p>
         </div>
       </Link>
     </article>

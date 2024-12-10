@@ -9,7 +9,7 @@ const AddedToCartModal = ({
   setModalOpened,
   productName,
   productPreviewImagePath,
-  productPrice,
+  priceFormatted,
   productSize,
 }) => {
   return (
@@ -32,7 +32,7 @@ const AddedToCartModal = ({
               />
               <div className={styles.textContainer}>
                 <p className={styles.productName}>{productName}</p>
-                <small>${productPrice}</small>
+                <small>{priceFormatted}</small>
                 <small className={styles.productSize}>
                   Size: {productSize}g
                 </small>
@@ -69,7 +69,7 @@ AddedToCartModal.propTypes = {
   setModalOpened: PropTypes.func.isRequired,
   productName: PropTypes.string.isRequired,
   productPreviewImagePath: PropTypes.string.isRequired,
-  productPrice: PropTypes.number.isRequired,
+  priceFormatted: PropTypes.string.isRequired,
   productSize: PropTypes.number.isRequired,
 };
 

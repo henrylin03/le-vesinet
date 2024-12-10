@@ -6,6 +6,7 @@ import ImagesGrid from "../../components/ImagesGrid";
 import ImagesCarousel from "../../components/ImagesCarousel";
 import AddedToCartModal from "../../components/AddedToCartModal";
 import getProduct from "../../helpers/getProduct";
+import toMoneyFormat from "../../helpers/toMoneyFormat";
 import styles from "./productPage.module.css";
 import AddToCartButton from "../../components/AddToCartButton";
 
@@ -17,6 +18,7 @@ const ProductPage = () => {
   const isNarrowScreen = useMediaQuery("(max-width: 899px)");
 
   const productObject = getProduct(productId);
+  const priceFormatted = toMoneyFormat(productObject.priceAUD);
 
   return (
     <>
@@ -25,7 +27,7 @@ const ProductPage = () => {
         setModalOpened={setModalOpened}
         productName={productObject.name}
         productPreviewImagePath={productObject.images[0]}
-        productPrice={productObject.priceAUD}
+        priceFormatted={priceFormatted}
         productSize={productObject.sizeGrams}
       />
 
@@ -44,7 +46,7 @@ const ProductPage = () => {
                 <b>Size: </b>
                 {productObject.sizeGrams}g
               </small>
-              <p>${productObject.priceAUD}</p>
+              <p>{priceFormatted}</p>
             </div>
 
             <div className={styles.descriptionAndBuyContainer}>
