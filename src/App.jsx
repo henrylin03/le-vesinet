@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { MantineProvider } from "@mantine/core";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -34,7 +33,7 @@ const App = () => {
     Object.values(cartProducts).reduce((a, b) => a + b, 0);
 
   return (
-    <MantineProvider>
+    <>
       <Header cartProductIdsCount={countProductsInCart()} />
 
       <main>
@@ -49,7 +48,7 @@ const App = () => {
       </main>
 
       <Footer />
-    </MantineProvider>
+    </>
   );
 };
 

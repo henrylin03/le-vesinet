@@ -2,6 +2,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { MantineProvider } from "@mantine/core";
 
 /* components */
 import App from "./App";
@@ -9,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import ErrorPage from "./pages/ErrorPage";
 
 /* css */
 import "./styles/normalise.css";
@@ -26,11 +28,14 @@ const router = createBrowserRouter([
       { path: "products/:productId", element: <ProductPage /> },
       { path: "cart", element: <CartPage /> },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <MantineProvider>
+      <RouterProvider router={router} />
+    </MantineProvider>
   </StrictMode>,
 );

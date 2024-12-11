@@ -1,0 +1,50 @@
+.errorPage {
+  background-color: white;
+  color: black;
+  min-height: 50dvh;
+  padding: 36px 20px;
+  text-wrap: pretty;
+  display: grid;
+  place-items: center;
+}
+
+.inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.image {
+  border-radius: 100%;
+  width: 50%;
+  min-width: 280px;
+}
+
+.heading {
+  composes: heading from global;
+  text-transform: none !important;
+}
+
+.paragraphText {
+  composes: paragraphText from global;
+}
+
+.link {
+  composes:
+    link from global,
+    paragraphText from global;
+}
+
+@media (max-width: 499px) {
+  .textContainer {
+    gap: 4px;
+  }
+}
