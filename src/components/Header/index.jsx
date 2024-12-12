@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import { ShoppingBag } from "lucide-react";
 import PropTypes from "prop-types";
 import PageLinks from "./PageLinks";
-import brandingImage from "../../assets/images/branding/branding.svg";
 import styles from "./header.module.css";
 
 const Header = ({ cartProductIdsCount }) => (
@@ -10,7 +9,7 @@ const Header = ({ cartProductIdsCount }) => (
     <Link to="/" aria-label="Go to home page" className={styles.branding}>
       <img
         className={styles.brandingImage}
-        src={brandingImage}
+        src="/images/branding/branding.svg"
         alt="Le Vesinet branding"
       />
     </Link>

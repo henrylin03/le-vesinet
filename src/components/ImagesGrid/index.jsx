@@ -10,7 +10,7 @@ const ImagesGrid = ({ imagePaths }) => {
     <article className={styles.images}>
       {imagePaths.map((imagePath) => (
         <div className={styles.gridItem} key={imagePath}>
-          <Skeleton visible={imageIsLoading} radius={16}>
+          <Skeleton visible={imageIsLoading} radius={8} height="100%">
             <img
               src={imagePath}
               className={styles.image}

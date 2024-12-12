@@ -1,7 +1,6 @@
 import { Link, useRouteError } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import puppyImage from "../../assets/images/error/sad-pupper-small-bw.jpg";
 import styles from "./errorPage.module.css";
 
 const ErrorPage = () => {
@@ -13,7 +12,7 @@ const ErrorPage = () => {
       <Header cartProductIdsCount={0} />
       <main className={styles.errorPage}>
         <div className={styles.inner}>
-          <img src={puppyImage} className={styles.image} />
+          <img src={"images/error-image.jpg"} className={styles.image} />
           <div className={styles.textContainer}>
             <h1 className={styles.heading}>
               Sorry, we couldn't find that page

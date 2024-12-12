@@ -8,6 +8,8 @@
 .previewImage {
   max-width: 100%;
   margin-bottom: 12px;
+  min-height: 20vw;
+  border-radius: 8px;
 }
 
 .textContainer {
@@ -27,13 +29,17 @@
 
 /* MEDIA QUERIES */
 @media (max-width: 899px) {
+  .previewImage {
+    min-height: max(40vw, 180px);
+  }
+
   .price {
     font-size: 0.75rem;
   }
 }
 
 @media (max-width: 433px) {
-  .card {
-    margin: 0 auto;
+  .productName {
+    line-height: 1.35rem;
   }
 }

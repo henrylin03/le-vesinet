@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import HeroSection from "./HeroSection";
-import belowTheFoldImage from "../../assets/images/moisturisersNextToClayBowl.webp";
 import ProductsCarousel from "./ProductsCarousel";
 import styles from "./homePage.module.css";
 
@@ -24,7 +23,7 @@ const HomePage = () => (
       </div>
 
       <img
-        src={belowTheFoldImage}
+        src="images/moisturisersNextToClayBowl.webp"
         alt="Le Vesinet hand moisturisers next to a clay bowl"
         className={styles.image}
       />

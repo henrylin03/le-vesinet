@@ -16,4 +16,6 @@
 
 .image {
   max-width: 100%;
+  min-height: 272px;
+  border-radius: 8px;
 }

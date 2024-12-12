@@ -11,7 +11,12 @@ const ProductPreview = ({ productObject }) => {
   return (
     <article>
       <Link to={`/products/${productObject.id}`} className={styles.link}>
-        <Skeleton visible={imageIsLoading} radius={16}>
+        <Skeleton
+          visible={imageIsLoading}
+          radius={8}
+          height="100%"
+          mb={imageIsLoading ? "md" : 0}
+        >
           <img
             src={productObject.images[0]}
             onLoad={() => setImageIsLoading(false)}

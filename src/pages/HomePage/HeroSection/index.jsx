@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import heroImage from "../../../assets/images/hero/hero.webp";
-import heroImage780w from "../../../assets/images/hero/hero-780w.webp";
 import styles from "./heroSection.module.css";
 
 const HeroSection = () => (
   <section className={styles.hero}>
     <picture className={styles.backgroundImage}>
-      <source media="(min-width: 780px)" srcSet={heroImage} />
-      <source media="(max-width: 779px)" srcSet={heroImage780w} />
-      <img className={styles.backgroundImage} src={heroImage} />
+      <source media="(min-width: 780px)" srcSet="images/hero/hero.webp" />
+      <source media="(max-width: 779px)" srcSet="images/hero/hero-780w.webp" />
+      <img className={styles.backgroundImage} src="images/hero/hero.webp" />
     </picture>
 
     <div className={styles.inner}>

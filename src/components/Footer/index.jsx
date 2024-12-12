@@ -7,7 +7,6 @@ import {
   IconArrowRight,
 } from "@tabler/icons-react";
 import toTitleCase from "../../helpers/toTitleCase";
-import logoImage from "../../assets/images/branding/branding-white-bg.svg";
 import styles from "./footer.module.css";
 
 const Footer = () => {
@@ -53,7 +52,7 @@ const Footer = () => {
       <div className={styles.inner}>
         <section className={styles.branding}>
           <Link to="/" aria-label="Go to home page">
-            <img src={logoImage} />
+            <img src="images/branding/branding-white-bg.svg" />
           </Link>
         </section>
 

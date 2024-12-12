@@ -11,14 +11,12 @@ const ImagesCarousel = ({ imagePaths }) => {
 
   const slides = imagePaths.map((imagePath) => (
     <Carousel.Slide key={imagePath}>
-      <Skeleton visible={imageIsLoading} radius={16}>
-        <figure>
-          <img
-            src={imagePath}
-            className={styles.image}
-            onLoad={() => setImageIsLoading(false)}
-          />
-        </figure>
+      <Skeleton visible={imageIsLoading}>
+        <img
+          src={imagePath}
+          className={styles.image}
+          onLoad={() => setImageIsLoading(false)}
+        />
       </Skeleton>
     </Carousel.Slide>
   ));
@@ -28,6 +26,7 @@ const ImagesCarousel = ({ imagePaths }) => {
       <Carousel
         withIndicators
         loop
+        mb={imageIsLoading ? "xs" : 0}
         plugins={[autoplay.current]}
         onMouseEnter={autoplay.current.stop}
         onMouseLeave={autoplay.current.reset}
