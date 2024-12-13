@@ -52,7 +52,7 @@ const Footer = () => {
       <div className={styles.inner}>
         <section className={styles.branding}>
           <Link to="/" aria-label="Go to home page">
-            <img src="images/branding/branding-white-bg.svg" />
+            <img src="/images/branding/branding-white-bg.svg" />
           </Link>
         </section>
 

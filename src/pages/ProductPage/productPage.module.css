@@ -42,8 +42,9 @@
 }
 
 .buyActions {
-  width: 100%;
-  display: flex;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 8px;
 }
 
@@ -90,14 +91,6 @@
 
   .heading {
     font-size: 1.6rem;
-  }
-
-  .buyActions {
-    justify-content: space-between;
-  }
-
-  .addToCartButton {
-    width: 100%;
   }
 
   .bottom {
