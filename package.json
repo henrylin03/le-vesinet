@@ -1,13 +1,12 @@
 {
   "name": "le-vesinet",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "test": "vitest",
     "preview": "vite preview",
     "prepare": "husky"
   },
@@ -15,37 +14,29 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@mantine/carousel": "^7.14.0",
-    "@mantine/core": "^7.13.5",
-    "@mantine/hooks": "^7.13.5",
-    "@tabler/icons-react": "^3.22.0",
-    "embla-carousel-autoplay": "^7.1.0",
-    "embla-carousel-react": "^7.1.0",
-    "lucide-react": "^0.456.0",
-    "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/react": "^18.3.10",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.2",
-    "eslint": "^9.11.1",
-    "eslint-plugin-react": "^7.37.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.12",
-    "globals": "^15.9.0",
-    "husky": "^9.1.6",
-    "jsdom": "^25.0.1",
-    "lint-staged": "^15.2.10",
-    "prettier": "3.3.3",
-    "vite": "^5.4.8",
-    "vitest": "^2.1.8"
-  }
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "babel-plugin-react-compiler": "^19.1.0-rc.3",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "3.6.2",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.45.0",
+    "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "resolutions": {
+    "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
